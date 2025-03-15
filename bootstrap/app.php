@@ -15,9 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'authorized' => AuthorizedMiddleware::class,
-            'is_guest' => GuestMiddleware::class,
-            'admin' => AdminMiddleware::class,
+            'authorized' => AuthorizedMiddleware::class, //this is the line that assigns the AuthorizedMiddleware to the alias 'authorized'
+            'is_guest' => GuestMiddleware::class, //this is the line that assigns the GuestMiddleware to the alias 'is_guest'
+            'admin' => AdminMiddleware::class, //this is the line that assigns the AdminMiddleware to the alias 'admin'
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
